@@ -21,20 +21,22 @@ public class OrderedList {
         //Statr at beginning of the list
         IntNode node = head;
         //See if first item is at the start
-        if (node == null) {
+        if (node == null||node.getNum() < num) {
             IntNode temp = new IntNode(num);
             head = temp;
-        } else if (node.getNum() < num) {
-            IntNode temp1 = head;
-            head = node;
-            while (temp1.getNum() <= num && temp1.getNext() != null) {
-                //travel to the next node
-                temp1 = temp1.getNext();
-            }
-            // Node is the last node on the list
-            IntNode temp = new IntNode(num);
-            //Insert it into the list
-            node.setNext(temp);
+            System.out.println("Temp: "+temp.getNum());
+//        } else if (node.getNum() < num) {
+//            IntNode temp1 = head;
+//            System.out.println("Temp1: "+temp1);
+//            head = node;
+//            while (temp1.getNum() <= num && temp1.getNext() != null) {
+//                //travel to the next node
+//                temp1 = temp1.getNext();
+//            }
+//            // Node is the last node on the list
+//            IntNode temp = new IntNode(num);
+//            //Insert it into the list
+//            node.setNext(temp);
         } else {
             //travel to the end
             while (node.getNum() <= num && node.getNext() != null) {
