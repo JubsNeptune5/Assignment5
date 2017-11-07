@@ -38,8 +38,8 @@ public class OrderedList {
 //            //Insert it into the list
 //            node.setNext(temp);
         } else {
-            //travel to the end
-            while (node.getNum() <= num && node.getNext() != null) {
+           //travel to the end
+           while (node.getNum() <= num && node.getNext() != null) {
                 //travel to the next node
                 node = node.getNext();
             }
