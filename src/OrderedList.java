@@ -18,16 +18,30 @@ public class OrderedList {
     }
 
     public void add(int num) {
+        
         //Statr at beginning of the list
         IntNode node = head;
+        if (num == node.getNext().getNum()) {
+            
+        }
         //See if first item is at the start
-        if (node == null||node.getNum() > num) {
+        if (node == null){
             IntNode temp = new IntNode(num);
-            head = node;
-            System.out.println("Temp: "+temp.getNum());
+            head = temp;
+        
         } else {
+            if(node.getNum() < head.getNum()) {
+            node.setNext(head);
+                System.out.println("Node in if: "+node.getNum());
+            IntNode temp = new IntNode(num);
+            head = temp;
+            System.out.println("head: "+head.getNum());
+            System.out.println("Node: "+node.getNum());
+            
+        }
            //travel to the end
            while (node.getNum() < num) {
+               System.out.println("Node in while: "+node.getNum());
                 //travel to the next node
                 node = node.getNext();
             }
@@ -57,7 +71,7 @@ public class OrderedList {
     public int get(int index) {
         IntNode node = head;
         //move the number of times 
-        for (int i = 0; i < index; i++) {
+        for (int i = 0; i < index-1; i++) {
             node = node.getNext();
         }
         return node.getNum();
