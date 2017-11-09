@@ -18,37 +18,29 @@ public class OrderedList {
     }
 
     public void add(int num) {
-        
+
         //Statr at beginning of the list
         IntNode node = head;
-        if (num == node.getNext().getNum()) {
-            
-        }
+        IntNode temp = new IntNode(num);
         //See if first item is at the start
-        if (node == null){
-            IntNode temp = new IntNode(num);
+        if (node == null) {
             head = temp;
-        
+
         } else {
-            if(node.getNum() < head.getNum()) {
-            node.setNext(head);
-                System.out.println("Node in if: "+node.getNum());
-            IntNode temp = new IntNode(num);
-            head = temp;
-            System.out.println("head: "+head.getNum());
-            System.out.println("Node: "+node.getNum());
-            
-        }
-           //travel to the end
-           while (node.getNum() < num) {
-               System.out.println("Node in while: "+node.getNum());
+            if (num < head.getNum()) {
+                IntNode p = head;
+                head = temp;
+                head.setNext(p);
+            }
+            //travel to the end
+            while (node.getNum() < num) {
                 //travel to the next node
                 node = node.getNext();
             }
             // Node is the last node on the list
-            IntNode temp = new IntNode(num);
+            IntNode temp2 = new IntNode(num);
             //Insert it into the list
-            node.setNext(temp);
+            node.setNext(temp2);
 
         }
 
@@ -71,7 +63,7 @@ public class OrderedList {
     public int get(int index) {
         IntNode node = head;
         //move the number of times 
-        for (int i = 0; i < index-1; i++) {
+        for (int i = 0; i < index - 1; i++) {
             node = node.getNext();
         }
         return node.getNum();
