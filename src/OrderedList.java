@@ -32,17 +32,17 @@ public class OrderedList {
                 head = temp;
                 head.setNext(p);
             }
-            //travel to the end
-            while (node.getNum() < num) {
-                //travel to the next node
-                node = node.getNext();
-            }
-            // Node is the last node on the list
-            IntNode temp2 = new IntNode(num);
-            //Insert it into the list
-            node.setNext(temp2);
-
-        }
+//            //travel to the end
+//            while (node.getNum() < num) {
+//                //travel to the next node
+//                node = node.getNext();
+//            }
+////            // Node is the last node on the list
+////            IntNode temp2 = new IntNode(num);
+//            //Insert it into the list
+//            node.setNext(temp);
+//
+       }
 
         //Increase the size counter
         numItems++;
