@@ -25,27 +25,26 @@ public class OrderedList {
         //See if first item is at the start
         if (node == null) {
             head = temp;
-        } else if (num < head.getNum()) {
+        } else {
+            if (num < head.getNum()) {
             IntNode p = head;
             head = temp;
             System.out.println("Head: " + head.getNum());
             head.setNext(p);
             System.out.println("head next: " + head.getNext().getNum());
         } else {
-                while (num > node.getNum()) {
+            System.out.println("TEST");
+            IntNode a = null;
+                while (node != null&&num > node.getNum()) {
                     System.out.println("num: " + num);
                     System.out.println("Node: " + node.getNum());
                     node = node.getNext();
-                    if (node.getNext() == null) {
-                        break;
-                    }
+                   
                 }
-//         Node is the last node on the list
-            IntNode temp2 = node.getNext();
 //        Insert it into the list
-            temp.setNext(temp2);
-            node.setNext(temp);
-        
+            temp.setNext(node);
+            a.setNext(temp);
+            }
         }
 
         //Increase the size counter
