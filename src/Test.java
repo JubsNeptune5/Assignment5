@@ -14,7 +14,12 @@ public class Test {
      */
     public static void main(String[] args) {
         OrderedList list  = new OrderedList();
+        System.out.println("Question 1");
+        System.out.println("");
         A5Q2 array = new A5Q2();
+        System.out.println("");
+        System.out.println("Question 2");
+        System.out.println("");
         array.add(0,0);
         array.add(1, 6);
         array.add(6,5);
