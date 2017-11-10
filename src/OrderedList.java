@@ -25,41 +25,28 @@ public class OrderedList {
         //See if first item is at the start
         if (node == null) {
             head = temp;
-
         } else if (num < head.getNum()) {
             IntNode p = head;
             head = temp;
-            System.out.println("Head: "+head.getNum());
+            System.out.println("Head: " + head.getNum());
             head.setNext(p);
-            System.out.println("head next: "+head.getNext().getNum());
+            System.out.println("head next: " + head.getNext().getNum());
         } else {
-            while (num > node.getNum()) {
-                System.out.println("num: "+num);
-                System.out.println("Node: "+node.getNum());
-                node = node.getNext();
-                if (node.getNext() == null) {
-                    break;
+                while (num > node.getNum()) {
+                    System.out.println("num: " + num);
+                    System.out.println("Node: " + node.getNum());
+                    node = node.getNext();
+                    if (node.getNext() == null) {
+                        break;
+                    }
                 }
-            }
-        }
-//        } else if (num > head.getNum()) {
-//            while (node.getNext().getNum() < num) {  //NOTE Temp is num/node is<num
-//                if (node.getNext() == null) {
-//                    node.setNext(temp);
-//                    break;
-//                }
-//                //travel to the next node
-//                node = node.getNext();
-//            }
-//        }
-//        //travel to the end
-//
 //         Node is the last node on the list
-        IntNode temp2 = new IntNode(num);
+            IntNode temp2 = node.getNext();
 //        Insert it into the list
-        temp.setNext(temp2);
-
-
+            temp.setNext(temp2);
+            node.setNext(temp);
+        
+        }
 
         //Increase the size counter
         numItems++;
