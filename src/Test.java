@@ -15,7 +15,21 @@ public class Test {
     public static void main(String[] args) {
         OrderedList list  = new OrderedList();
         A5Q2 array = new A5Q2();
-        array.add(index, num);
+        array.add(0,0);
+        array.add(1, 6);
+        array.add(6,5);
+        for (int i = 2; i < 6; i++) {
+           array.add(i,0); 
+        }
+        for (int i = 7; i < 32; i++) {
+            array.add(i,0);
+        }
+        
+        array.add(33,7);
+//        
+        array.get();
+        
+        
         
         
         
