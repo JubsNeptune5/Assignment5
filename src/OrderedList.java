@@ -11,12 +11,19 @@ public class OrderedList {
 
     private IntNode head;
     private int numItems;
+    private int[] items;
 
     public OrderedList() {
         head = null;
         numItems = 0;
+        items = new int[numItems + 1];
     }
 
+    /**
+     * Adds a number to the list in order smallest to largest
+     *
+     * @param num the number put into the list
+     */
     public void add(int num) {
 
         //Statr at beginning of the list
@@ -24,6 +31,7 @@ public class OrderedList {
         IntNode temp = new IntNode(num);
         //See if first item is at the start
         if (node == null) {
+            System.out.println("TEST 5");
             head = temp;
         } else {
             if (num < head.getNum()) {
@@ -36,10 +44,10 @@ public class OrderedList {
             } else {
                 if (node.getNext() == null) {
                     System.out.println("TWST1");
-                    System.out.println("Temp; "+temp.getNum());
-                   
+                    System.out.println("Temp; " + temp.getNum());
+
                     node.setNext(temp);
-                    System.out.println("Node.setNext(temp)"+node.getNext().getNum());
+                    System.out.println("Node.setNext(temp)" + node.getNext().getNum());
                 } else {
                     System.out.println("TEST");
                     while (node.getNext().getNum() < num) {
@@ -54,13 +62,10 @@ public class OrderedList {
                     node.setNext(temp);
                 }
             }
+        p
         }
         //Increase the size counter
-            numItems++;
-    }
-
-    public int remove(int num) {
-        return 0;
+        numItems++;
     }
 
     public int size() {
@@ -78,5 +83,24 @@ public class OrderedList {
             node = node.getNext();
         }
         return node.getNum();
+    }
+
+    public void remove(int num) {
+        IntNode temp = head;
+        IntNode prev = null;
+        while (temp != null) {
+            if(temp.getNum() == num){
+                if(temp ==head){
+                    head=head.getNext();
+                }else{
+                    prev.setNext(temp.getNext());
+                }
+                
+            }else{
+                prev=temp;
+            }
+            temp = temp.getNext();
+        }
+        numItems--;
     }
 }
